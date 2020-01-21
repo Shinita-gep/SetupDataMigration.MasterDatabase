@@ -1,16 +1,17 @@
 ﻿CREATE TABLE [dbo].[SDM_BuyerEnvironmentMapping] (
-    [BuyerEnvironmentId]       INT             IDENTITY (1, 1) NOT NULL,
-    [EnvironmentId]            INT             NULL,
-    [BuyerPartnerCode]         BIGINT          NULL,
-    [DomainName]               VARCHAR (100)   NULL,
-    [ClientName]               VARCHAR (100)   NULL,
-    [IsDefaultDomain]          BIT             DEFAULT ((0)) NOT NULL,
-    [AdminContactCode]         BIGINT          NULL,
-    [ClientLogoPath]           NVARCHAR (1000) NULL,
-    [ContactCode]              BIGINT          NULL,
-    [UserId]                   BIGINT          DEFAULT ((0)) NOT NULL,
-    [UserName]                 NVARCHAR (MAX)  NULL,
-    [MaxFileSizeForAttachment] BIGINT          DEFAULT ((10240)) NOT NULL,
-    CONSTRAINT [PK_STMIGR_BuyerEnvironmentMapping] PRIMARY KEY CLUSTERED ([BuyerEnvironmentId] ASC)
+    [EnvironmentId]    INT           NOT NULL,
+    [BuyerPartnerCode] BIGINT        NOT NULL,
+    [DomainName]       VARCHAR (100) NULL,
+    [ClientId]         INT           CONSTRAINT [DF__SDM_Buyer__Clien__6501FCD8] DEFAULT ((0)) NOT NULL,
+    [CreatedBy]        NVARCHAR (20) NOT NULL,
+    [CreatedOn]        DATETIME      NOT NULL,
+    [ModifiedBy]       NVARCHAR (20) NULL,
+    [ModifiedOn]       DATETIME      NULL,
+    [isDeleted]        BIT           CONSTRAINT [DF__SDM_Buyer__isDel__18B6AB08] DEFAULT ((0)) NOT NULL,
+    CONSTRAINT [PK__SDM_Buye__2FA6E8CCA9BD86F0] PRIMARY KEY CLUSTERED ([EnvironmentId] ASC, [BuyerPartnerCode] ASC),
+    CONSTRAINT [fk_client_id] FOREIGN KEY ([ClientId]) REFERENCES [dbo].[SDM_Clients] ([ClientId]),
+    CONSTRAINT [fk_environment_id] FOREIGN KEY ([EnvironmentId]) REFERENCES [dbo].[SDM_Environments] ([EnvironmentId])
 );
+
+
 

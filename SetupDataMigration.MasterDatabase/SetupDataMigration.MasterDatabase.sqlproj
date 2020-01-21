@@ -62,26 +62,19 @@
     <Folder Include="dbo\Views\" />
     <Folder Include="dbo\Stored Procedures\" />
     <Folder Include="dbo\User Defined Types\" />
+    <Folder Include="Security\" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\SDM_Users.sql" />
-    <Build Include="dbo\Tables\SDM_UserEnvironmentMapping.sql" />
-    <Build Include="dbo\Tables\SDM_Setup_ORG_EntityDetails_UAT.sql" />
-    <Build Include="dbo\Tables\SDM_Setup_ORG_EntityDetails_Prod.sql" />
     <Build Include="dbo\Tables\SDM_Setup_Migration_Transaction_Logs.sql" />
-    <Build Include="dbo\Tables\SDM_Setup_Migration.sql" />
     <Build Include="dbo\Tables\SDM_Products.sql" />
     <Build Include="dbo\Tables\SDM_ProductActivityMapping.sql" />
     <Build Include="dbo\Tables\SDM_Environments.sql" />
-    <Build Include="dbo\Tables\SDM_EnvironmentDBConfiguration.sql" />
     <Build Include="dbo\Tables\SDM_Customers.sql" />
     <Build Include="dbo\Tables\SDM_BuyerEnvironmentMapping.sql" />
     <Build Include="dbo\Tables\SDM_ActivitySPs.sql" />
     <Build Include="dbo\Tables\SDM_Activities.sql" />
-    <Build Include="dbo\Views\vw_ActivitiesPerProduct.sql" />
-    <Build Include="dbo\Stored Procedures\usp_STMIGR_LogMigrationTransaction.sql" />
     <Build Include="dbo\Stored Procedures\usp_SDM_GetEnvironments.sql" />
-    <Build Include="dbo\Stored Procedures\usp_SDM_GetCustomer.sql" />
     <Build Include="dbo\Stored Procedures\usp_SDM_GetAllProducts.sql" />
     <Build Include="dbo\Stored Procedures\usp_SDM_GetAllActivities.sql" />
     <Build Include="dbo\Stored Procedures\usp_SDM_GetActivityStoredProc.sql" />
@@ -90,6 +83,23 @@
     <Build Include="dbo\Stored Procedures\usp_SDM_GetActivities.sql" />
     <Build Include="dbo\Stored Procedures\RM_BaseTableIndex_Reorganize.sql" />
     <Build Include="dbo\Stored Procedures\RM_BaseTableIndex.sql" />
-    <Build Include="dbo\User Defined Types\tvt_STMIGR_Setup_Migration_Transaction_Logs.sql" />
+    <Build Include="dbo\Tables\SDM_UserEnvironmentActivityMapping.sql" />
+    <Build Include="dbo\Tables\SDM_DependencyMapping.sql" />
+    <Build Include="dbo\Tables\SDM_Clients.sql" />
+    <Build Include="dbo\Tables\SDM_BuyerEnvironmentActivityMapping.sql" />
+    <Build Include="Security\DB_Executor.sql" />
+    <Build Include="Security\shinita.t%40gep.com.sql" />
+    <Build Include="Security\Ramnath.bodke%40gep.com.sql" />
+    <Build Include="Security\pranav.deo%40gep.com.sql" />
+    <Build Include="Security\DEV_Setup_user.sql" />
+    <Build Include="Security\RoleMemberships.sql" />
+    <Build Include="dbo\Stored Procedures\usp_SDM_UserAuthorization.sql" />
+    <Build Include="dbo\Stored Procedures\usp_SDM_ResetActivityMigration.sql" />
+    <Build Include="dbo\Stored Procedures\usp_SDM_InsertSetupDataMigrationTransactionLogs.sql" />
+    <Build Include="dbo\Stored Procedures\usp_SDM_InsertBuyerEnvironmentActivityMapping.sql" />
+    <Build Include="dbo\Stored Procedures\usp_SDM_GetDependantActivityMappingValidation.sql" />
+    <Build Include="dbo\Stored Procedures\usp_SDM_GetClients.sql" />
+    <Build Include="dbo\Stored Procedures\usp_SDM_GetBuyerDomains.sql" />
+    <Build Include="dbo\Stored Procedures\usp_SDM_GetActivitiesWithMigrationValidation.sql" />
   </ItemGroup>
 </Project>

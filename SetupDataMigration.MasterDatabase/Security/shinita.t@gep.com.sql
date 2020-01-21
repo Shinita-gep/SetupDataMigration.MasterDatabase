@@ -1,0 +1,2 @@
+﻿CREATE USER [shinita.t@gep.com] FOR EXTERNAL PROVIDER;
+

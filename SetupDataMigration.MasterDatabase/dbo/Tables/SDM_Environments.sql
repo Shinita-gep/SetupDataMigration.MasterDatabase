@@ -1,6 +1,13 @@
 ﻿CREATE TABLE [dbo].[SDM_Environments] (
-    [EnvironmentId]   INT            IDENTITY (1, 1) NOT NULL,
+    [EnvironmentId]   INT            NOT NULL,
     [EnvironmentName] VARCHAR (1000) NULL,
-    CONSTRAINT [PK_SM_Environments] PRIMARY KEY CLUSTERED ([EnvironmentId] ASC)
+    [CreatedBy]       NVARCHAR (20)  NOT NULL,
+    [CreatedOn]       DATETIME       NOT NULL,
+    [ModifiedBy]      NVARCHAR (20)  NULL,
+    [ModifiedOn]      DATETIME       NULL,
+    [isDeleted]       BIT            CONSTRAINT [DF__SDM_Envir__isDel__19AACF41] DEFAULT ((0)) NOT NULL,
+    CONSTRAINT [PK_SDM_Environments] PRIMARY KEY CLUSTERED ([EnvironmentId] ASC)
 );
+
+
 
